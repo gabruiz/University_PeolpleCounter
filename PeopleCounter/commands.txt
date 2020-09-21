@@ -1,0 +1,25 @@
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libv4l/v4l1compat.so python people_counter_aula_magna.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel
+
+SUBSCRIBER:
+
+python Subscriber.py
+
+
+PUBLISHER:
+
+AULA MAGNA:
+python people_counter_aula_magna.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel --input videos/example_01_long.mp4
+
+D32:
+python people_counter_d32.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel --input videos/example_01_long.mp4
+
+BRT:
+python people_counter_brt.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel --input videos/example_01_long.mp4
+
+PIAZZA DUOMO:
+python people_counter_piazza_duomo.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel --input videos/example_01_long.mp4
+
+SIMULAZIONE CONFERENZA IN AULA MAGNA:
+python people_counter_aula_magna.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel --input videos/example_conference.mp4
+
+E' presente su DB una conferenza in aula magna che va dalle ore 14 alle ore 15 circa di giorno 6 marzo.
